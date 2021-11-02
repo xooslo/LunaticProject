@@ -1,0 +1,24 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+#Main {
+	-fx-background-image: url(/pic/main.png);
+	-fx-background-size: cover;
+	-fx-background-position: center;
+}
+
+.utilBtn {
+	-fx-background-color: #1076e7;
+	-fx-text-fill: white;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0 ,0, 0.5), 0, 1, 5, 5);
+}
+.utilBtn:hover {
+	-fx-cursor: hand ;
+}
+
+.playBtn {
+	-fx-opacity: 0;
+}
+.playBtn:hover {
+	-fx-cursor: hand ;
+}
+
