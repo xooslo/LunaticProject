@@ -6,6 +6,12 @@
 	-fx-background-position: center;
 }
 
+#login {
+	-fx-background-image: url(/pic/login.png);
+	-fx-background-size: cover;
+	-fx-background-position: center;
+}
+
 .utilBtn {
 	-fx-background-color: #1076e7;
 	-fx-text-fill: white;
