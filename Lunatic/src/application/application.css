@@ -28,3 +28,9 @@
 	-fx-cursor: hand ;
 }
 
+
+#settingPane {
+	-fx-background-image: url(/pic/setting_bg.png);
+	-fx-background-size: cover;
+	-fx-background-position: center;
+}
