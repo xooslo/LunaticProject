@@ -34,3 +34,14 @@
 	-fx-background-size: cover;
 	-fx-background-position: center;
 }
+
+#storyPane {
+	-fx-background-image: url(/pic/smile_talk.png);
+	-fx-background-size: cover;
+	-fx-background-position: center;
+}
+
+.skip_btn {
+	-fx-background-color: #b35900;
+	-fx-text-fill: white;
+}

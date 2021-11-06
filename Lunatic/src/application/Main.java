@@ -14,11 +14,12 @@ public class Main extends Application {
 			FXMLLoader loader = new FXMLLoader();
 //			loader.setLocation(getClass().getResource("/work/MainScene.fxml"));
 //			loader.setLocation(getClass().getResource("/work/LoginScene.fxml"));
-			loader.setLocation(getClass().getResource("/work/SettingScene.fxml"));
+//			loader.setLocation(getClass().getResource("/work/SettingScene.fxml"));
+			loader.setLocation(getClass().getResource("/work/StoryScene.fxml"));
 			AnchorPane root = (AnchorPane)loader.load();
 			
-//			Scene scene = new Scene(root,1200,800);
-			Scene scene = new Scene(root,350,400);
+			Scene scene = new Scene(root,1200,800);
+//			Scene scene = new Scene(root,350,400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setTitle("Lunatic");
 			primaryStage.setScene(scene);
