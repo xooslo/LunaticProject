@@ -12,10 +12,10 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-//			loader.setLocation(getClass().getResource("/work/MainScene.fxml"));
+			loader.setLocation(getClass().getResource("/work/MainScene.fxml"));
 //			loader.setLocation(getClass().getResource("/work/LoginScene.fxml"));
 //			loader.setLocation(getClass().getResource("/work/SettingScene.fxml"));
-			loader.setLocation(getClass().getResource("/work/StoryScene.fxml"));
+//			loader.setLocation(getClass().getResource("/work/StoryScene.fxml"));
 			AnchorPane root = (AnchorPane)loader.load();
 			
 			Scene scene = new Scene(root,1200,800);

@@ -12,7 +12,7 @@ public class JDBCUtil {
 			e.printStackTrace();
 		}
 		
-		String connectionString = "jdbc:mysql://localhost/idol";
+		String connectionString = "jdbc:mysql://localhost/lunatic";
 		String userId = "root";
 		String password = "";
 		

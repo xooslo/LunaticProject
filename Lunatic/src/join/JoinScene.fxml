@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="join.JoinController">
+   <children>
+      <TextField fx:id="nick" layoutX="206.0" layoutY="173.0" />
+      <TextField fx:id="id" layoutX="206.0" layoutY="109.0" />
+      <PasswordField fx:id="ps" layoutX="206.0" layoutY="231.0" />
+      <Button fx:id="join" layoutX="421.0" layoutY="197.0" mnemonicParsing="false" />
+      <Button layoutX="539.0" layoutY="10.0" mnemonicParsing="false" text="Button" />
+      <PasswordField fx:id="ps2" layoutX="206.0" layoutY="290.0" />
+   </children>
+</AnchorPane>
