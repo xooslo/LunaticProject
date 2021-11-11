@@ -12,6 +12,25 @@
 	-fx-background-position: center;
 }
 
+#join {
+	-fx-background-image: url(/pic/login.png);
+	-fx-background-size: cover;
+}
+
+#joinBtn:hover {
+	-fx-cursor: hand;
+}
+
+#mainBtn {
+	-fx-background-image: url(/pic/set.png);
+	-fx-background-size: cover;
+	-fx-background-position: center;
+}
+
+#mainBtn:hover {
+	-fx-cursor: hand;
+}
+
 .utilBtn {
 	-fx-background-color: #1076e7;
 	-fx-text-fill: white;
@@ -25,7 +44,7 @@
 	-fx-opacity: 0;
 }
 .playBtn:hover {
-	-fx-cursor: hand ;
+	-fx-cursor: hand;
 }
 
 

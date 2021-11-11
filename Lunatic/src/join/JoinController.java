@@ -4,9 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import util.AppUtill;
 import util.JDBCUtil;
 
@@ -22,7 +26,22 @@ public class JoinController {
 	@FXML
 	private PasswordField ps2;
 	@FXML
-	private Button join;
+	private Button joinBtn;
+	@FXML
+	private Button mainBtn;
+	
+	public void getMainScene() {
+	      try {
+	         Parent login = FXMLLoader.load(getClass().getResource("/work/MainScene.fxml"));
+	         Scene scene = new Scene(login);
+	         Stage primaryStage = (Stage) mainBtn.getScene().getWindow();
+	         primaryStage.setScene(scene);
+	         primaryStage.setTitle("LUNATIC");
+	         
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      }
+	   }
 	
 	public void addPlayer() {
 		String name = id.getText();
@@ -46,18 +65,14 @@ public class JoinController {
 		String sql = "INSERT INTO player VALUES (?, ?, ?)";
 	
 		try {
-			if(password.equals(ckPs)) {
-				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, name);
-				pstmt.setString(2,nickname);
-				pstmt.setString(3, password);
-				pstmt.setString(4, ckPs);
-				pstmt.executeUpdate();
-				AppUtill.alert("로그인 후 게임을 이용하실 수 있습니다.", "가입 완료");
-				
-			} else {
-				AppUtill.alert("비밀번호가 일치하지 않습니다. 다시 시도하세요", null);
-			}
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2,nickname);
+			pstmt.setString(3, password);
+			pstmt.setString(4, ckPs);
+			pstmt.executeUpdate();
+			AppUtill.alert("로그인 후 게임을 이용하실 수 있습니다.", "가입 완료");
 			
 		} catch (Exception e) {
 			e.printStackTrace();

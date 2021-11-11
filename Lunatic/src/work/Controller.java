@@ -15,6 +15,8 @@ public class Controller {
 	private Button loginBtn;
 	@FXML
 	private Button joinBtn;
+	@FXML
+	private Button mainBtn;
 	
 	public void getSettingScene() {
 	      try {
@@ -49,6 +51,19 @@ public class Controller {
 	         Stage primaryStage = (Stage) joinBtn.getScene().getWindow();
 	         primaryStage.setScene(scene);
 	         primaryStage.setTitle("회원가입");
+	         
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      }
+	   }
+	
+	public void getMainScene() {
+	      try {
+	         Parent login = FXMLLoader.load(getClass().getResource("/work/MainScene.fxml"));
+	         Scene scene = new Scene(login);
+	         Stage primaryStage = (Stage) mainBtn.getScene().getWindow();
+	         primaryStage.setScene(scene);
+	         primaryStage.setTitle("LUNATIC");
 	         
 	      } catch (Exception e) {
 	         e.printStackTrace();
