@@ -11,6 +11,9 @@
 	-fx-background-size: cover;
 	-fx-background-position: center;
 }
+#login_text {
+	-fx-font-size: 20px;
+}
 
 #join {
 	-fx-background-image: url(/pic/login.png);
