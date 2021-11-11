@@ -17,6 +17,8 @@ public class Controller {
 	private Button joinBtn;
 	@FXML
 	private Button mainBtn;
+	@FXML
+	private Button howplayBtn;
 	
 	public void getSettingScene() {
 	      try {
@@ -64,6 +66,18 @@ public class Controller {
 	         Stage primaryStage = (Stage) mainBtn.getScene().getWindow();
 	         primaryStage.setScene(scene);
 	         primaryStage.setTitle("LUNATIC");
+	         
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      }
+	   }
+	public void getHowPlayScene() {
+	      try {
+	         Parent login = FXMLLoader.load(getClass().getResource("/work/HowPlayScene.fxml"));
+	         Scene scene = new Scene(login);
+	         Stage primaryStage = (Stage) howplayBtn.getScene().getWindow();
+	         primaryStage.setScene(scene);
+	         primaryStage.setTitle("How To play");
 	         
 	      } catch (Exception e) {
 	         e.printStackTrace();
