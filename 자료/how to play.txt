@@ -1,0 +1,5 @@
+{how to play}
+WASD 앞 뒤 양 옆
+j 공격키
+e 인벤창 열기
+
