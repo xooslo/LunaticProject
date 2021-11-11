@@ -67,3 +67,16 @@
 	-fx-background-color: #b35900;
 	-fx-text-fill: white;
 }
+#ending {
+	-fx-background-image: url(/pic/ending.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+}
+.endingBtn {
+	-fx-background-color: white;
+	-fx-text-fill: black;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0 ,0, 0.5), 0, 1, 5, 5);
+}
+.endingBtn:hover {
+	-fx-cursor: hand ;
+}
