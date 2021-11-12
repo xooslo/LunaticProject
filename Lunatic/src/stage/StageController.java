@@ -15,6 +15,8 @@ public class StageController {
 
 	// 메인으로 돌아가는 버튼
 	@FXML
+	private Button mainBtn1;
+	@FXML
 	private Button mainBtn;
 
 	// story1버튼
@@ -60,7 +62,7 @@ public class StageController {
 			Scene scene = new Scene(login);
 			Stage primaryStage = (Stage) setBtn.getScene().getWindow();
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("�꽕�젙");
+			primaryStage.setTitle("설정");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -80,6 +82,20 @@ public class StageController {
 			e.printStackTrace();
 		}
 	}
+	
+	// 메인창으로 이동하는 화면전환코드 (png 이미지 없는 버전 분리함)
+		public void getMainSceneNone() {
+			try {
+				Parent login = FXMLLoader.load(getClass().getResource("/work/MainScene.fxml"));
+				Scene scene = new Scene(login);
+				Stage primaryStage = (Stage) mainBtn1.getScene().getWindow();
+				primaryStage.setScene(scene);
+				primaryStage.setTitle("LUNATIC");
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 
 	// StageScene 이동하는 화면전환코드
 	public void getstageScene() {

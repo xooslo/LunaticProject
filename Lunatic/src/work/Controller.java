@@ -50,7 +50,7 @@ public class Controller {
 	         Scene scene = new Scene(login);
 	         Stage primaryStage = (Stage) setBtn.getScene().getWindow();
 	         primaryStage.setScene(scene);
-	         primaryStage.setTitle("�꽕�젙");
+	         primaryStage.setTitle("설정");
 	         
 	      } catch (Exception e) {
 	         e.printStackTrace();
@@ -65,7 +65,7 @@ public class Controller {
 	         Scene scene = new Scene(login);
 	         Stage primaryStage = (Stage) loginBtn.getScene().getWindow();
 	         primaryStage.setScene(scene);
-	         primaryStage.setTitle("濡쒓렇�씤");
+	         primaryStage.setTitle("로그인");
 	         
 	      } catch (Exception e) {
 	         e.printStackTrace();
@@ -80,7 +80,7 @@ public class Controller {
 	         Scene scene = new Scene(login);
 	         Stage primaryStage = (Stage) joinBtn.getScene().getWindow();
 	         primaryStage.setScene(scene);
-	         primaryStage.setTitle("�쉶�썝媛��엯");
+	         primaryStage.setTitle("회원가입");
 	         
 	      } catch (Exception e) {
 	         e.printStackTrace();
@@ -131,21 +131,5 @@ public class Controller {
 	      } catch (Exception e) {
 	         e.printStackTrace();
 	      }
-	   }
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}
 }
