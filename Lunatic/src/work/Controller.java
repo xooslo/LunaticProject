@@ -24,6 +24,8 @@ public class Controller {
 	@FXML
 	private Button skip1Btn;
 	
+	
+	//설정창으로 이동하는 화면전환코드
 	public void getSettingScene() {
 	      try {
 	         Parent login = FXMLLoader.load(getClass().getResource("/work/SettingScene.fxml"));
@@ -36,7 +38,7 @@ public class Controller {
 	         e.printStackTrace();
 	      }
 	   }
-	
+	//로그인창으로 이동하는 화면전환코드
 	public void getLoginScene() {
 	      try {
 	         Parent login = FXMLLoader.load(getClass().getResource("/work/LoginScene.fxml"));
@@ -49,7 +51,7 @@ public class Controller {
 	         e.printStackTrace();
 	      }
 	   }
-	
+	//회원가입창으로 이동하는 화면전환코드
 	public void getJoinScene() {
 	      try {
 	         Parent login = FXMLLoader.load(getClass().getResource("/join/JoinScene.fxml"));
@@ -62,7 +64,7 @@ public class Controller {
 	         e.printStackTrace();
 	      }
 	   }
-	
+	//메인창으로 이동하는 화면전환코드
 	public void getMainScene() {
 	      try {
 	         Parent login = FXMLLoader.load(getClass().getResource("/work/MainScene.fxml"));
@@ -75,6 +77,7 @@ public class Controller {
 	         e.printStackTrace();
 	      }
 	   }
+	//how to창 이동하는 화면전환코드
 	public void getHowPlayScene() {
 	      try {
 	         Parent login = FXMLLoader.load(getClass().getResource("/work/HowPlayScene.fxml"));
@@ -87,6 +90,7 @@ public class Controller {
 	         e.printStackTrace();
 	      }
 	   }
+	//StageScene 이동하는 화면전환코드
 	public void getskip1Scene() {
 	      try {
 	         Parent login = FXMLLoader.load(getClass().getResource("/work/StageScene.fxml"));
@@ -99,6 +103,7 @@ public class Controller {
 	         e.printStackTrace();
 	      }
 	   }
+	//StoryScene 이동하는 화면전환코드
 	public void getstoryScene() {
 	      try {
 	         Parent login = FXMLLoader.load(getClass().getResource("/work/StoryScene.fxml"));

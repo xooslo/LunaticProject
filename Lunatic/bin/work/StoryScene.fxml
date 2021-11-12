@@ -8,9 +8,9 @@
    <children>
       <Button fx:id="skip1Btn" layoutX="1076.0" layoutY="727.0" mnemonicParsing="false" onAction="#getskip1Scene" prefHeight="34.0" prefWidth="84.0" styleClass="skip_btn" text="SKIP" />
       <Button id="setBtn" fx:id="setBtn" layoutX="1102.0" layoutY="14.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="84.0" styleClass="utilBtn" text="설정" />
-      <Label layoutX="75.0" layoutY="588.0" prefHeight="30.0" prefWidth="423.0" styleClass="storytext1" text="스마일: 일어나 ㅇㅇ! 어서 일어나봐!" />
-      <Label layoutX="75.0" layoutY="712.0" prefHeight="20.0" prefWidth="202.0" styleClass="storytext1" text="주인공: 알겠어요." />
-      <Label layoutX="75.0" layoutY="626.0" prefHeight="30.0" prefWidth="374.0" styleClass="storytext1" text="주인공: 대부님, 무슨 일이에요..?" />
-      <Label layoutX="75.0" layoutY="669.0" prefHeight="30.0" prefWidth="873.0" styleClass="storytext1" text="스마일: 마을 근처 숲에서 몬스터들이 날뛰고 있어! 어서 몬스터를 잡으러 가!" />
+      <Label layoutX="75.0" layoutY="601.0" prefHeight="30.0" prefWidth="423.0" styleClass="storytext1" text="스마일: 일어나 ㅇㅇ! 어서 일어나봐!" />
+      <Label layoutX="75.0" layoutY="729.0" prefHeight="20.0" prefWidth="202.0" styleClass="storytext1" text="주인공: 알겠어요." />
+      <Label layoutX="75.0" layoutY="641.0" prefHeight="30.0" prefWidth="374.0" styleClass="storytext1" text="주인공: 대부님, 무슨 일이에요..?" />
+      <Label layoutX="75.0" layoutY="684.0" prefHeight="30.0" prefWidth="873.0" styleClass="storytext1" text="스마일: 마을 근처 숲에서 몬스터들이 날뛰고 있어! 어서 몬스터를 잡으러 가!" />
    </children>
 </AnchorPane>
