@@ -12,7 +12,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/work/MainScene.fxml"));
+//			loader.setLocation(getClass().getResource("/work/MainScene.fxml"));
 //			loader.setLocation(getClass().getResource("/join/LoginScene.fxml"));
 //			loader.setLocation(getClass().getResource("/work/SettingScene.fxml"));
 //			loader.setLocation(getClass().getResource("/story/StoryScene.fxml"));
@@ -24,7 +24,7 @@ public class Main extends Application {
 //			loader.setLocation(getClass().getResource("/stage/StageScene2.fxml"));
 //			loader.setLocation(getClass().getResource("/stage/StageScene3.fxml"));
 //			loader.setLocation(getClass().getResource("/stage/StageScene4.fxml"));
-//			loader.setLocation(getClass().getResource("/stage/StageScene5.fxml")); 
+			loader.setLocation(getClass().getResource("/stage/StageScene5.fxml")); 
 			AnchorPane root = (AnchorPane)loader.load();
 			
 			Scene scene = new Scene(root,1200,800);

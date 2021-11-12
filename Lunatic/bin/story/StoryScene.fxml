@@ -4,10 +4,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="storyPane" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="work.Controller">
+<AnchorPane id="storyPane" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="story.StoryController">
    <children>
-      <Button fx:id="skip1Btn" layoutX="1076.0" layoutY="727.0" mnemonicParsing="false" onAction="#getskip1Scene" prefHeight="34.0" prefWidth="84.0" styleClass="skip_btn" text="SKIP" />
-      <Button id="setBtn" fx:id="setBtn" layoutX="1102.0" layoutY="14.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="84.0" styleClass="utilBtn" text="설정" />
+      <Button fx:id="stageBtn" layoutX="1076.0" layoutY="727.0" mnemonicParsing="false" onAction="#getstageScene" prefHeight="34.0" prefWidth="84.0" styleClass="skip_btn" text="SKIP" />
       <Label layoutX="75.0" layoutY="601.0" prefHeight="30.0" prefWidth="423.0" styleClass="storytext1" text="스마일: 일어나 ㅇㅇ! 어서 일어나봐!" />
       <Label layoutX="75.0" layoutY="729.0" prefHeight="20.0" prefWidth="202.0" styleClass="storytext1" text="주인공: 알겠어요." />
       <Label layoutX="75.0" layoutY="641.0" prefHeight="30.0" prefWidth="374.0" styleClass="storytext1" text="주인공: 대부님, 무슨 일이에요..?" />

@@ -7,7 +7,7 @@
    <children>
       <AnchorPane id="stageScene5" layoutX="1.0" prefHeight="800.0" prefWidth="1200.0">
          <children>
-            <Button fx:id="mainBtn" layoutX="1121.0" layoutY="14.0" mnemonicParsing="false" onAction="#getMainScene" prefHeight="66.0" prefWidth="65.0" styleClass="endingBtn" text="." />
+            <Button layoutX="1121.0" layoutY="14.0" mnemonicParsing="false" onAction="#getMainScene" prefHeight="66.0" prefWidth="65.0" styleClass="endingBtn" text="." />
          </children></AnchorPane>
    </children>
 </AnchorPane>

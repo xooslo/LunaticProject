@@ -8,21 +8,39 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class Controller {
-
+	
+	//설정버튼
 	@FXML
 	private Button setBtn;
+	
+	//로그인버튼
 	@FXML
 	private Button loginBtn;
+	
+	//회원가입버튼
 	@FXML
 	private Button joinBtn;
+	
+	//메인으로 돌아가는 버튼
 	@FXML
 	private Button mainBtn;
+	
+	//HOW TO에 가는 버튼
 	@FXML
 	private Button howplayBtn;
+	
+	//story1버튼
 	@FXML
-	private Button storyBtn;
-	@FXML
-	private Button skip1Btn;
+	private Button story1Btn;
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	//설정창으로 이동하는 화면전환코드
@@ -38,6 +56,8 @@ public class Controller {
 	         e.printStackTrace();
 	      }
 	   }
+	
+	
 	//로그인창으로 이동하는 화면전환코드
 	public void getLoginScene() {
 	      try {
@@ -51,6 +71,8 @@ public class Controller {
 	         e.printStackTrace();
 	      }
 	   }
+	
+	
 	//회원가입창으로 이동하는 화면전환코드
 	public void getJoinScene() {
 	      try {
@@ -64,6 +86,8 @@ public class Controller {
 	         e.printStackTrace();
 	      }
 	   }
+	
+	
 	//메인창으로 이동하는 화면전환코드
 	public void getMainScene() {
 	      try {
@@ -77,6 +101,8 @@ public class Controller {
 	         e.printStackTrace();
 	      }
 	   }
+	
+	
 	//how to창 이동하는 화면전환코드
 	public void getHowPlayScene() {
 	      try {
@@ -90,25 +116,15 @@ public class Controller {
 	         e.printStackTrace();
 	      }
 	   }
-	//StageScene 이동하는 화면전환코드
-	public void getskip1Scene() {
-	      try {
-	         Parent login = FXMLLoader.load(getClass().getResource("/stage/StageScene.fxml"));
-	         Scene scene = new Scene(login);
-	         Stage primaryStage = (Stage) skip1Btn.getScene().getWindow();
-	         primaryStage.setScene(scene);
-	         primaryStage.setTitle("skip1");
-	         
-	      } catch (Exception e) {
-	         e.printStackTrace();
-	      }
-	   }
+	
+	
+	
 	//StoryScene 이동하는 화면전환코드
 	public void getstoryScene() {
 	      try {
 	         Parent login = FXMLLoader.load(getClass().getResource("/story/StoryScene.fxml"));
 	         Scene scene = new Scene(login);
-	         Stage primaryStage = (Stage) storyBtn.getScene().getWindow();
+	         Stage primaryStage = (Stage) story1Btn.getScene().getWindow();
 	         primaryStage.setScene(scene);
 	         primaryStage.setTitle("story");
 	         
@@ -116,5 +132,20 @@ public class Controller {
 	         e.printStackTrace();
 	      }
 	   }
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
