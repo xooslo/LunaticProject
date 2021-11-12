@@ -62,10 +62,17 @@
 	-fx-background-size: cover;
 	-fx-background-position: center;
 }
+.storytext1 {
+	-fx-font-size: 20px;
+	
+}
 
 .skip_btn {
 	-fx-background-color: #b35900;
 	-fx-text-fill: white;
+}
+.skip_btn:hover {
+	-fx-cursor: hand ;
 }
 #ending {
 	-fx-background-image: url(/pic/ending.png); 

@@ -16,14 +16,16 @@ public class Main extends Application {
 //			loader.setLocation(getClass().getResource("/work/LoginScene.fxml"));
 //			loader.setLocation(getClass().getResource("/work/SettingScene.fxml"));
 //			loader.setLocation(getClass().getResource("/work/StoryScene.fxml"));
+			loader.setLocation(getClass().getResource("/work/StoryScene2.fxml"));
 //			loader.setLocation(getClass().getResource("/work/HowPlayScene.fxml"));
 //			loader.setLocation(getClass().getResource("/join/JoinScene.fxml"));
-			loader.setLocation(getClass().getResource("/work/Ending.fxml"));
+//			loader.setLocation(getClass().getResource("/work/Ending.fxml"));
+//			loader.setLocation(getClass().getResource("/work/StageScene.fxml"));
 			AnchorPane root = (AnchorPane)loader.load();
 			
-//			Scene scene = new Scene(root,1200,800);
+			Scene scene = new Scene(root,1200,800);
 //			Scene scene = new Scene(root,350,400);
-			Scene scene = new Scene(root,700,450);
+//			Scene scene = new Scene(root,700,450);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setTitle("Lunatic");
 			primaryStage.setScene(scene);
