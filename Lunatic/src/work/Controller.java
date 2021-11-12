@@ -41,7 +41,7 @@ public class Controller {
 	//로그인창으로 이동하는 화면전환코드
 	public void getLoginScene() {
 	      try {
-	         Parent login = FXMLLoader.load(getClass().getResource("/work/LoginScene.fxml"));
+	         Parent login = FXMLLoader.load(getClass().getResource("/join/LoginScene.fxml"));
 	         Scene scene = new Scene(login);
 	         Stage primaryStage = (Stage) loginBtn.getScene().getWindow();
 	         primaryStage.setScene(scene);
@@ -93,7 +93,7 @@ public class Controller {
 	//StageScene 이동하는 화면전환코드
 	public void getskip1Scene() {
 	      try {
-	         Parent login = FXMLLoader.load(getClass().getResource("/work/StageScene.fxml"));
+	         Parent login = FXMLLoader.load(getClass().getResource("/stage/StageScene.fxml"));
 	         Scene scene = new Scene(login);
 	         Stage primaryStage = (Stage) skip1Btn.getScene().getWindow();
 	         primaryStage.setScene(scene);
@@ -106,7 +106,7 @@ public class Controller {
 	//StoryScene 이동하는 화면전환코드
 	public void getstoryScene() {
 	      try {
-	         Parent login = FXMLLoader.load(getClass().getResource("/work/StoryScene.fxml"));
+	         Parent login = FXMLLoader.load(getClass().getResource("/story/StoryScene.fxml"));
 	         Scene scene = new Scene(login);
 	         Stage primaryStage = (Stage) storyBtn.getScene().getWindow();
 	         primaryStage.setScene(scene);

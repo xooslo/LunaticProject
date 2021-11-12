@@ -87,3 +87,33 @@
 .endingBtn:hover {
 	-fx-cursor: hand ;
 }
+#howTo {
+	-fx-background-image: url(/pic/howToPlay.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+}
+#stageScene1 {
+	-fx-background-image: url(/pic/stage_1_2.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+}
+#stageScene2 {
+	-fx-background-image: url(/pic/stage_1_2.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+}
+#stageScene3 {
+	-fx-background-image: url(/pic/stage_3_4.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+}
+#stageScene4 {
+	-fx-background-image: url(/pic/stage_3_4.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+}
+#stageScene5 {
+	-fx-background-image: url(/pic/stage_5.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+}
