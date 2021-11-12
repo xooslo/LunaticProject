@@ -19,6 +19,10 @@ public class Controller {
 	private Button mainBtn;
 	@FXML
 	private Button howplayBtn;
+	@FXML
+	private Button storyBtn;
+	@FXML
+	private Button skip1Btn;
 	
 	public void getSettingScene() {
 	      try {
@@ -26,7 +30,7 @@ public class Controller {
 	         Scene scene = new Scene(login);
 	         Stage primaryStage = (Stage) setBtn.getScene().getWindow();
 	         primaryStage.setScene(scene);
-	         primaryStage.setTitle("설정");
+	         primaryStage.setTitle("�꽕�젙");
 	         
 	      } catch (Exception e) {
 	         e.printStackTrace();
@@ -39,7 +43,7 @@ public class Controller {
 	         Scene scene = new Scene(login);
 	         Stage primaryStage = (Stage) loginBtn.getScene().getWindow();
 	         primaryStage.setScene(scene);
-	         primaryStage.setTitle("로그인");
+	         primaryStage.setTitle("濡쒓렇�씤");
 	         
 	      } catch (Exception e) {
 	         e.printStackTrace();
@@ -52,7 +56,7 @@ public class Controller {
 	         Scene scene = new Scene(login);
 	         Stage primaryStage = (Stage) joinBtn.getScene().getWindow();
 	         primaryStage.setScene(scene);
-	         primaryStage.setTitle("회원가입");
+	         primaryStage.setTitle("�쉶�썝媛��엯");
 	         
 	      } catch (Exception e) {
 	         e.printStackTrace();
@@ -78,6 +82,30 @@ public class Controller {
 	         Stage primaryStage = (Stage) howplayBtn.getScene().getWindow();
 	         primaryStage.setScene(scene);
 	         primaryStage.setTitle("How To play");
+	         
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      }
+	   }
+	public void getskip1Scene() {
+	      try {
+	         Parent login = FXMLLoader.load(getClass().getResource("/work/StageScene.fxml"));
+	         Scene scene = new Scene(login);
+	         Stage primaryStage = (Stage) skip1Btn.getScene().getWindow();
+	         primaryStage.setScene(scene);
+	         primaryStage.setTitle("skip1");
+	         
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      }
+	   }
+	public void getstoryScene() {
+	      try {
+	         Parent login = FXMLLoader.load(getClass().getResource("/work/StoryScene.fxml"));
+	         Scene scene = new Scene(login);
+	         Stage primaryStage = (Stage) storyBtn.getScene().getWindow();
+	         primaryStage.setScene(scene);
+	         primaryStage.setTitle("story");
 	         
 	      } catch (Exception e) {
 	         e.printStackTrace();
