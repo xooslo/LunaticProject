@@ -35,14 +35,6 @@ public class Controller {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
 	//설정창으로 이동하는 화면전환코드
 	public void getSettingScene() {
 	      try {
