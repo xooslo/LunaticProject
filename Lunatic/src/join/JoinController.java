@@ -22,9 +22,9 @@ public class JoinController {
 	@FXML
 	private TextField nick;
 	@FXML
-	private PasswordField ps;	
+	private PasswordField pw;	
 	@FXML
-	private PasswordField ps2;
+	private PasswordField pwCheck;
 	@FXML
 	private Button joinBtn;
 	@FXML
@@ -41,22 +41,22 @@ public class JoinController {
 	      } catch (Exception e) {
 	         e.printStackTrace();
 	      }
-	   }
+	}
 	
 	public void addPlayer() {
 		String name = id.getText();
 		String nickname = nick.getText();
-		String password = ps.getText();
-		String ckPs = ps2.getText();
+		String password = pw.getText();
+		String checkPassword = pwCheck.getText();
 		
 		JDBCUtil db = new JDBCUtil();
 		Connection con = db.getConnection();
 		
-		if (name.isEmpty() || nickname.isEmpty() || password.isEmpty() || ckPs.isEmpty()) {
+		if (name.isEmpty() || nickname.isEmpty() || password.isEmpty() || checkPassword.isEmpty()) {
 			AppUtill.alert("모든 란을 정확히 채워주세요.", null);
 			return;
 		}
-		if(name.equals(" ") || nickname.equals(" ") || password.equals(" ") || ckPs.equals(" ")) {
+		if(name.equals(" ") || nickname.equals(" ") || password.equals(" ") || checkPassword.equals(" ")) {
 			AppUtill.alert("모든 란에 공백이 없게 다시 입력해주세요.", null);
 			return;
 		}
@@ -70,7 +70,7 @@ public class JoinController {
 			pstmt.setString(1, name);
 			pstmt.setString(2,nickname);
 			pstmt.setString(3, password);
-			pstmt.setString(4, ckPs);
+			pstmt.setString(4, checkPassword);
 			pstmt.executeUpdate();
 			AppUtill.alert("로그인 후 게임을 이용하실 수 있습니다.", "가입 완료");
 			
