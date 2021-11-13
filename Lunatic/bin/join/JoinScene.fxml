@@ -7,34 +7,28 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="join" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="join.JoinController">
+<AnchorPane id="join" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="join.JoinController">
    <children>
-      <Button fx:id="joinBtn" layoutX="564.0" layoutY="529.0" mnemonicParsing="false" onAction="#addPlayer" prefHeight="45.0" prefWidth="72.0" styleClass="utilBtn" text="회원가입" />
+      <Button fx:id="joinBtn" layoutX="560.0" layoutY="530.0" mnemonicParsing="false" onAction="#addPlayer" prefHeight="45.0" prefWidth="82.0" styleClass="utilBtn" text="회원가입" />
       <Button fx:id="mainBtn" layoutX="1134.0" layoutY="14.0" mnemonicParsing="false" onAction="#getMainScene" prefHeight="54.0" prefWidth="52.0" />
-      <TextField fx:id="id" layoutX="447.0" layoutY="322.0" prefHeight="23.0" prefWidth="306.0" />
-      <TextField fx:id="nick" layoutX="447.0" layoutY="260.0" prefHeight="23.0" prefWidth="306.0" />
-      <Label layoutX="448.0" layoutY="299.0" text="ID">
+      <TextField fx:id="id" layoutX="447.0" layoutY="386.0" prefHeight="23.0" prefWidth="306.0" />
+      <TextField fx:id="nick" layoutX="448.0" layoutY="311.0" prefHeight="23.0" prefWidth="306.0" />
+      <Label layoutX="449.0" layoutY="353.0" text="ID">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="444.0" layoutY="366.0" text="PW">
+      <Label layoutX="446.0" layoutY="430.0" text="PW">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="447.0" layoutY="237.0" text="NICKNAME">
+      <Label layoutX="449.0" layoutY="273.0" text="NICKNAME">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label id="login_text" layoutX="547.0" layoutY="157.0" text="계정 만들기" />
-      <Label layoutX="444.0" layoutY="431.0" text="PW 확인">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <PasswordField fx:id="pw" layoutX="448.0" layoutY="389.0" prefHeight="22.0" prefWidth="306.0" />
-      <PasswordField fx:id="pwCheck" layoutX="447.0" layoutY="454.0" prefHeight="22.0" prefWidth="306.0" />
+      <Label id="login_text" layoutX="548.0" layoutY="171.0" text="계정 만들기" />
+      <PasswordField fx:id="pw" layoutX="447.0" layoutY="462.0" prefHeight="22.0" prefWidth="306.0" />
    </children>
 </AnchorPane>

@@ -2,6 +2,7 @@ package join;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,17 +17,6 @@ import util.JDBCUtil;
 
 public class JoinController {
 
-	
-	@FXML
-	private TextField id;
-	@FXML
-	private TextField nick;
-	@FXML
-	private PasswordField pw;	
-	@FXML
-	private PasswordField pwCheck;
-	@FXML
-	private Button joinBtn;
 	@FXML
 	private Button mainBtn;
 	
@@ -43,34 +33,46 @@ public class JoinController {
 	      }
 	}
 	
+	@FXML
+	private TextField nick;
+	@FXML
+	private TextField id;
+	@FXML
+	private PasswordField pw;
+	@FXML
+	private Button joinBtn;
+	
+	@FXML
+	private void initialize() {
+		
+	}
+	
 	public void addPlayer() {
+		String nickName = nick.getText();
 		String name = id.getText();
-		String nickname = nick.getText();
 		String password = pw.getText();
-		String checkPassword = pwCheck.getText();
 		
 		JDBCUtil db = new JDBCUtil();
 		Connection con = db.getConnection();
 		
-		if (name.isEmpty() || nickname.isEmpty() || password.isEmpty() || checkPassword.isEmpty()) {
+		if (name.isEmpty() || nickName.isEmpty() || password.isEmpty()) {
 			AppUtill.alert("모든 란을 정확히 채워주세요.", null);
-			return;
 		}
-		if(name.equals(" ") || nickname.equals(" ") || password.equals(" ") || checkPassword.equals(" ")) {
+		
+		if(name.equals(" ") || nickName.equals(" ") || password.equals(" ")) {
 			AppUtill.alert("모든 란에 공백이 없게 다시 입력해주세요.", null);
-			return;
+			
 		}
 	
 		PreparedStatement pstmt = null;
-		String sql = "INSERT INTO player VALUES (?, ?, ?)";
+		String sql = "INSERT INTO player VALUES (?,?,?)";
+//		String sql = "INSERT INTO `player`(`id`, `nick`, `password`) VALUES ('"+ name +"', '"+ nickName +"', '"+ password +"');";
 	
-		try {
-			
+		try { 
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, name);
-			pstmt.setString(2,nickname);
+			pstmt.setString(2, nickName);
 			pstmt.setString(3, password);
-			pstmt.setString(4, checkPassword);
 			pstmt.executeUpdate();
 			AppUtill.alert("로그인 후 게임을 이용하실 수 있습니다.", "가입 완료");
 			
@@ -79,4 +81,73 @@ public class JoinController {
 			AppUtill.alert("데이터 삽입에 실패했습니다.", null);
 		}
 	}
+	
+	// 로그인에서 사용할 메소드
+		public void getScene(String url, Button btn) {
+			try {
+				Parent main = FXMLLoader.load(getClass().getResource(url));
+				Scene scene = new Scene(main);
+				Stage primaryStage = (Stage) btn.getScene().getWindow();
+				primaryStage.setScene(scene);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	
+	@FXML
+	private TextField loginId;
+	@FXML
+	private PasswordField loginPw;
+	@FXML
+	private Button loginBtn;
+	
+	// 유저 로그인
+	public void loginPlayer() {
+		String name = loginId.getText();
+		String password = loginPw.getText();
+		JDBCUtil db = new JDBCUtil();
+		Connection con = db.getConnection();
+		int cnt = 0;
+			
+		if (name.isEmpty() || password.isEmpty()) {
+			AppUtill.alert("아이디와 비밀번호에 빈칸이 없게 모두 입력해주세요.", null);
+			return;
+		}
+			
+		if(con == null) {
+			AppUtill.alert("데이터 베이스 연결에 실패했습니다.", null);
+			return;
+		}
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT `id`, `password` FROM `player` WHERE id = '"+ name +"' AND password = '"+ password +"';";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+					
+				String ckId = rs.getString("id");
+				String ckPs = rs.getString("password");
+				if(name.equals(ckId) || password.equals(ckPs)) {
+					cnt++;
+					AppUtill.alert("로그인 성공", null);
+					getScene("/work/MainScene.fxml", loginBtn);
+					break;
+				}
+			}
+			if(cnt != 1) {
+				AppUtill.alert("아이디와 비밀번호를 다시 확인해주세요.", null);
+			}
+			
+			} catch (Exception e) {
+			e.printStackTrace();
+			AppUtill.alert("데이터 삽입 실패", null);
+			return;
+				
+		}
+	}
+
 }
