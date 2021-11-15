@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import util.AppUtill;
 
 public class Controller {
 	
@@ -16,6 +17,10 @@ public class Controller {
 	//로그인버튼
 	@FXML
 	private Button loginBtn;
+	@FXML
+	private Button startToLogin;
+	@FXML
+	private Button loadToLogin;
 	
 	//회원가입버튼
 	@FXML
@@ -24,6 +29,8 @@ public class Controller {
 	//메인으로 돌아가는 버튼
 	@FXML
 	private Button mainBtn;
+	@FXML
+	private Button logoutBtn;
 	
 	//HOW TO에 가는 버튼
 	@FXML
@@ -64,6 +71,36 @@ public class Controller {
 	      }
 	   }
 	
+	//로그인 전 스타트 버튼을 누르면 로그인창으로 이동하는 화면전환코드
+		public void startToLoginScene() {
+		      try {
+		         Parent login = FXMLLoader.load(getClass().getResource("/join/LoginScene.fxml"));
+		         Scene scene = new Scene(login);
+		         Stage primaryStage = (Stage) startToLogin.getScene().getWindow();
+		         primaryStage.setScene(scene);
+		         primaryStage.setTitle("로그인");
+		         AppUtill.alert("게임을 이용하기 전 로그인 해주세요.", null);
+		         
+		      } catch (Exception e) {
+		         e.printStackTrace();
+		      }
+		   }
+		
+	//로그인 전 불러오기 버튼을 누르면 로그인창으로 이동하는 화면전환코드
+			public void loadToLoginScene() {
+				  try {
+				     Parent login = FXMLLoader.load(getClass().getResource("/join/LoginScene.fxml"));
+				     Scene scene = new Scene(login);
+				     Stage primaryStage = (Stage) loadToLogin.getScene().getWindow();
+				     primaryStage.setScene(scene);
+				     primaryStage.setTitle("로그인");
+				     AppUtill.alert("게임을 불러오려면 로그인을 진행 해주세요.", null);
+				         
+				  } catch (Exception e) {
+				     e.printStackTrace();
+				  }
+			}
+	
 	
 	//회원가입창으로 이동하는 화면전환코드
 	public void getJoinScene() {
@@ -93,6 +130,21 @@ public class Controller {
 	         e.printStackTrace();
 	      }
 	   }
+	
+	//메인창으로 이동하는 화면전환코드
+		public void logoutScene() {
+		      try {
+		         Parent login = FXMLLoader.load(getClass().getResource("/work/MainScene.fxml"));
+		         Scene scene = new Scene(login);
+		         Stage primaryStage = (Stage) logoutBtn.getScene().getWindow();
+		         primaryStage.setScene(scene);
+		         primaryStage.setTitle("LUNATIC");
+		         AppUtill.alert("로그아웃 되었습니다.", null);
+		         
+		      } catch (Exception e) {
+		         e.printStackTrace();
+		      }
+		   }
 	
 	
 	//how to창 이동하는 화면전환코드

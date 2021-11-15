@@ -68,7 +68,7 @@ public class JoinController {
 		String sql = "INSERT INTO player VALUES (?,?,?)";
 //		String sql = "INSERT INTO `player`(`id`, `nick`, `password`) VALUES ('"+ name +"', '"+ nickName +"', '"+ password +"');";
 	
-		try { 
+		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, name);
 			pstmt.setString(2, nickName);
@@ -134,7 +134,7 @@ public class JoinController {
 				if(name.equals(ckId) || password.equals(ckPs)) {
 					cnt++;
 					AppUtill.alert("로그인 성공", null);
-					getScene("/work/MainScene.fxml", loginBtn);
+					getScene("/work/MainScene_afterLogin.fxml", loginBtn);
 					break;
 				}
 			}
