@@ -157,19 +157,3 @@
 	-fx-text-fill: white;
 	
 }
-#store {
-	-fx-background-image: url(/pic/store.png); 
-	-fx-background-size: cover;
-	-fx-background-position: center;
-}
-#store2 {
-	-fx-background-image: url(/pic/store2.png); 
-	-fx-background-size: cover;
-	-fx-background-position: center;
-}
-.storeBtn {
-	-fx-opacity: 1;
-	-fx-background-color: #5D4037;
-	-fx-text-fill: white;
-	
-}
