@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- 생성 시간: 21-11-15 17:41
+-- 생성 시간: 21-11-15 18:50
 -- 서버 버전: 10.4.19-MariaDB
 -- PHP 버전: 7.4.20
 
@@ -28,16 +28,15 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `log_info` (
-  `id` varchar(30) NOT NULL,
-  `nick` varchar(10) NOT NULL
+  `id` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- 테이블의 덤프 데이터 `log_info`
 --
 
-INSERT INTO `log_info` (`id`, `nick`) VALUES
-('haesun', '1234');
+INSERT INTO `log_info` (`id`) VALUES
+('xooslo');
 
 -- --------------------------------------------------------
 

@@ -44,7 +44,22 @@ public class JoinController {
 	
 	@FXML
 	private void initialize() {
+		System.out.println("initialize");
 		
+		//log_info 삭제 
+		JDBCUtil db = new JDBCUtil();
+		Connection con = db.getConnection();
+		
+		PreparedStatement pstmt = null;
+		String logOutSql = "delete from log_info";
+
+		try {
+			pstmt  = con.prepareStatement(logOutSql);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("실패!");
+		} 
 	}
 	
 	public void addPlayer() {
@@ -133,6 +148,20 @@ public class JoinController {
 				String ckPs = rs.getString("password");
 				if(name.equals(ckId) || password.equals(ckPs)) {
 					cnt++;
+					
+					
+					//로그인 세션
+					String logSetSql = "insert into log_info(`id`) value('" + ckId + "')";
+
+					try {
+						pstmt  = con.prepareStatement(logSetSql);
+						pstmt.executeUpdate();
+					} catch (Exception e) {
+						e.printStackTrace();
+						System.out.println("실패!");
+					} 
+					
+					
 					AppUtill.alert("로그인 성공", null);
 					getScene("/work/MainScene.fxml", loginBtn);
 					break;
