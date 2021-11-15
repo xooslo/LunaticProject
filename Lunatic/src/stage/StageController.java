@@ -1,13 +1,21 @@
 package stage;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
-public class StageController {
+public class StageController implements Initializable {
 
 	// 설정버튼
 	@FXML
@@ -54,6 +62,9 @@ public class StageController {
 	// 상점 버튼2
 	@FXML
 	private Button store2Btn;
+	
+	@FXML
+	private ImageView imgPlayer;
 
 	// 설정창으로 이동하는 화면전환코드
 	public void getSettingScene() {
@@ -72,7 +83,7 @@ public class StageController {
 	// 메인창으로 이동하는 화면전환코드
 	public void getMainScene() {
 		try {
-			Parent login = FXMLLoader.load(getClass().getResource("/work/MainScene.fxml"));
+			Parent login = FXMLLoader.load(getClass().getResource("/work/MainScene_afterLogin.fxml"));
 			Scene scene = new Scene(login);
 			Stage primaryStage = (Stage) mainBtn.getScene().getWindow();
 			primaryStage.setScene(scene);
@@ -86,7 +97,7 @@ public class StageController {
 	// 메인창으로 이동하는 화면전환코드 (png 이미지 없는 버전 분리함)
 		public void getMainSceneNone() {
 			try {
-				Parent login = FXMLLoader.load(getClass().getResource("/work/MainScene.fxml"));
+				Parent login = FXMLLoader.load(getClass().getResource("/work/MainScene_afterLogin.fxml"));
 				Scene scene = new Scene(login);
 				Stage primaryStage = (Stage) mainBtn1.getScene().getWindow();
 				primaryStage.setScene(scene);
@@ -220,6 +231,32 @@ public class StageController {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		imgPlayer.setOnKeyPressed(new EventHandler<KeyEvent>() {
+
+			@Override
+			public void handle(KeyEvent event) {
+				handleImgPlayer(event);
+			}
+		});
+	}
+		
+	public void handleImgPlayer(KeyEvent event) {
+		KeyCode keyCode = event.getCode();
+		System.out.println(keyCode);
+		
+		if (KeyCode.UP.equals(keyCode)) {
+			imgPlayer.setY(imgPlayer.getY() - 10);
+		} else if (KeyCode.DOWN.equals(keyCode)) {
+			imgPlayer.setY(imgPlayer.getY() + 10);
+		} else if (KeyCode.LEFT.equals(keyCode)) {
+			imgPlayer.setX(imgPlayer.getX() - 10);
+		} else if (KeyCode.RIGHT.equals(keyCode)) {
+			imgPlayer.setX(imgPlayer.getX() + 10);
 		}
 	}
 	
