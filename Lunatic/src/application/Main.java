@@ -27,6 +27,8 @@ public class Main extends Application {
 //			loader.setLocation(getClass().getResource("/story/StoryScene2.fxml"));
 //			loader.setLocation(getClass().getResource("/story/Root1.fxml")); 
 //			loader.setLocation(getClass().getResource("/story/Root2.fxml")); 
+//			loader.setLocation(getClass().getResource("/store/StoreScene.fxml")); 
+//			loader.setLocation(getClass().getResource("/store/StoreScene2.fxml")); 
 			AnchorPane root = (AnchorPane)loader.load();
 			
 			Scene scene = new Scene(root,1200,800);

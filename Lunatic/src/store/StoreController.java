@@ -16,6 +16,9 @@ public class StoreController {
 	// story2버튼
 	@FXML
 	private Button story2Btn;
+	
+	@FXML
+	private Button potion;
 
 	// StageScene3 이동하는 화면전환코드
 	public void getstageScene3() {
@@ -43,6 +46,9 @@ public class StoreController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	public void getpotion() {
+		
 	}
 
 }
