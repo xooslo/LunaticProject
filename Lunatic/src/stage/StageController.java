@@ -72,7 +72,7 @@ public class StageController {
 	// 메인창으로 이동하는 화면전환코드
 	public void getMainScene() {
 		try {
-			Parent login = FXMLLoader.load(getClass().getResource("/work/MainScene.fxml"));
+			Parent login = FXMLLoader.load(getClass().getResource("/work/MainScene_afterLogin.fxml"));
 			Scene scene = new Scene(login);
 			Stage primaryStage = (Stage) mainBtn.getScene().getWindow();
 			primaryStage.setScene(scene);
@@ -86,7 +86,7 @@ public class StageController {
 	// 메인창으로 이동하는 화면전환코드 (png 이미지 없는 버전 분리함)
 		public void getMainSceneNone() {
 			try {
-				Parent login = FXMLLoader.load(getClass().getResource("/work/MainScene.fxml"));
+				Parent login = FXMLLoader.load(getClass().getResource("/work/MainScene_afterLogin.fxml"));
 				Scene scene = new Scene(login);
 				Stage primaryStage = (Stage) mainBtn1.getScene().getWindow();
 				primaryStage.setScene(scene);
