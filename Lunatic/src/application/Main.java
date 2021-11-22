@@ -12,7 +12,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/work/MainScene.fxml"));
+//			loader.setLocation(getClass().getResource("/work/MainScene.fxml"));
 //			loader.setLocation(getClass().getResource("/work/SettingScene.fxml"));
 //			loader.setLocation(getClass().getResource("/work/HowPlayScene.fxml"));
 //			loader.setLocation(getClass().getResource("/join/LoginScene.fxml"));

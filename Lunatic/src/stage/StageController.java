@@ -27,10 +27,6 @@ public class StageController {
 	@FXML
 	private Button stageBtn;
 
-	// stage2버튼
-	@FXML
-	private Button stageBtn2;
-
 	// stage4버튼
 	@FXML
 	private Button stageBtn4;
@@ -105,20 +101,6 @@ public class StageController {
 			Stage primaryStage = (Stage) stageBtn.getScene().getWindow();
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("stage");
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	// StageScene2 이동하는 화면전환코드
-	public void getstageScene2() {
-		try {
-			Parent login = FXMLLoader.load(getClass().getResource("/stage/StageScene2.fxml"));
-			Scene scene = new Scene(login);
-			Stage primaryStage = (Stage) stageBtn2.getScene().getWindow();
-			primaryStage.setScene(scene);
-			primaryStage.setTitle("stage2");
 
 		} catch (Exception e) {
 			e.printStackTrace();

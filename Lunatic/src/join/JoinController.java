@@ -44,22 +44,22 @@ public class JoinController {
 	
 	@FXML
 	private void initialize() {
-//		System.out.println("initialize");
-//		
-//		//log_info 삭제 
-//		JDBCUtil db = new JDBCUtil();
-//		Connection con = db.getConnection();
-//		
-//		PreparedStatement pstmt = null;
-//		String logOutSql = "delete from log_info";
-//
-//		try {
-//			pstmt  = con.prepareStatement(logOutSql);
-//			pstmt.executeUpdate();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			System.out.println("실패!");
-//		} 
+		System.out.println("initialize");
+		
+		//log_info 삭제 
+		JDBCUtil db = new JDBCUtil();
+		Connection con = db.getConnection();
+		
+		PreparedStatement pstmt = null;
+		String logOutSql = "delete from log_info";
+
+		try {
+			pstmt  = con.prepareStatement(logOutSql);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("실패!");
+		} 
 	}
 	
 	public void addPlayer() {
