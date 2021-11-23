@@ -89,6 +89,7 @@ public class JoinController {
 			pstmt.setString(2, nickName);
 			pstmt.setString(3, password);
 			pstmt.executeUpdate();
+			getScene("/join/LoginScene.fxml", joinBtn);
 			AppUtill.alert("로그인 후 게임을 이용하실 수 있습니다.", "가입 완료");
 			
 		} catch (Exception e) {
