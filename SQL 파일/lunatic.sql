@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- 생성 시간: 21-11-22 16:36
--- 서버 버전: 10.4.21-MariaDB
--- PHP 버전: 7.4.23
+-- 생성 시간: 21-11-24 03:42
+-- 서버 버전: 10.4.20-MariaDB
+-- PHP 버전: 7.4.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,15 +41,9 @@ CREATE TABLE `items` (
 --
 
 CREATE TABLE `log_info` (
-  `id` varchar(30) NOT NULL
+  `id` varchar(30) NOT NULL,
+  `nick` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- 테이블의 덤프 데이터 `log_info`
---
-
-INSERT INTO `log_info` (`id`) VALUES
-('xooslo');
 
 -- --------------------------------------------------------
 
@@ -85,16 +79,17 @@ CREATE TABLE `save` (
   `accessory` varchar(10) NOT NULL,
   `skin` varchar(10) NOT NULL,
   `weapon` varchar(10) NOT NULL,
-  `player_id` varchar(30) NOT NULL
+  `player_id` varchar(30) NOT NULL,
+  `coin` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- 테이블의 덤프 데이터 `save`
 --
 
-INSERT INTO `save` (`id`, `stage`, `potion`, `accessory`, `skin`, `weapon`, `player_id`) VALUES
-(1, 2, 'p001', 'a001', 's001', 'w001', 'xooslo'),
-(2, 1, 'p001', 'a001', 's001', 'w001', 'haesun');
+INSERT INTO `save` (`id`, `stage`, `potion`, `accessory`, `skin`, `weapon`, `player_id`, `coin`) VALUES
+(1, 2, 'p001', 'a001', 's001', 'w001', 'xooslo', 0),
+(2, 1, 'p001', 'a001', 's001', 'w001', 'haesun', 0);
 
 --
 -- 덤프된 테이블의 인덱스
