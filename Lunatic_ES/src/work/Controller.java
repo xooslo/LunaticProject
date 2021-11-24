@@ -37,6 +37,8 @@ public class Controller {
 	@FXML
 	private Button mainBtn;
 	@FXML
+	private Button endingToMain;
+	@FXML
 	private Button logoutBtn;
 	
 	//HOW TO에 가는 버튼
@@ -139,6 +141,20 @@ public class Controller {
 	         e.printStackTrace();
 	      }
 	   }
+	
+	//메인창으로 이동하는 화면전환코드
+		public void endingSceneToMain() {
+		      try {
+		         Parent login = FXMLLoader.load(getClass().getResource("/work/MainScene_afterLogin.fxml"));
+		         Scene scene = new Scene(login);
+		         Stage primaryStage = (Stage) endingToMain.getScene().getWindow();
+		         primaryStage.setScene(scene);
+		         primaryStage.setTitle("LUNATIC");
+		         
+		      } catch (Exception e) {
+		         e.printStackTrace();
+		      }
+		   }
 	
 	//로그아웃 후 메인창으로 이동하는 화면전환코드
 		public void logoutScene() {
