@@ -98,7 +98,7 @@
 #endingToMain {
 	-fx-background-color: white;
 	-fx-text-fill: black;
-	-fx-effect: dropshadow(gaussian, rgba(0, 0 ,0, 0.5), 0, 1, 5, 5);
+	-fx-effect: dropshadow(gaussian, rgba(0, 0 , 0, 0.5), 0, 1, 5, 5);
 	
 }
 .endingBtn:hover {

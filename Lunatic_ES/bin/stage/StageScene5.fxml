@@ -3,13 +3,13 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="stageScene5" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stage.StageController">
+<AnchorPane id="stageScene5" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stage.StageController">
    <children>
       <AnchorPane id="stageScene5" layoutX="1.0" prefHeight="800.0" prefWidth="1200.0">
          <children>
             <Button fx:id="mainBtn1" layoutX="1121.0" layoutY="14.0" mnemonicParsing="false" onAction="#getMainSceneNone" prefHeight="27.0" prefWidth="65.0" styleClass="endingBtn" text="나가기" />
-            <Button fx:id="root2Btn" layoutX="1086.0" layoutY="763.0" mnemonicParsing="false" onAction="#getroot2" prefHeight="23.0" prefWidth="98.0" styleClass="stageBtn" text="루트2" />
-            <Button fx:id="root1Btn" layoutX="14.0" layoutY="763.0" mnemonicParsing="false" onAction="#getroot1" prefHeight="23.0" prefWidth="98.0" styleClass="stageBtn" text="루트1" />
+            <Button fx:id="root2Btn" layoutX="1088.0" layoutY="757.0" mnemonicParsing="false" onAction="#getroot2" prefHeight="23.0" prefWidth="98.0" styleClass="stageBtn" text="루트2" />
+            <Button fx:id="root1Btn" layoutX="14.0" layoutY="757.0" mnemonicParsing="false" onAction="#getroot1" prefHeight="23.0" prefWidth="98.0" styleClass="stageBtn" text="루트1" />
          </children></AnchorPane>
    </children>
 </AnchorPane>

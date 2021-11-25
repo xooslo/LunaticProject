@@ -32,7 +32,9 @@ public class Main extends Application {
 			loader.setLocation(getClass().getResource("/work/Ending.fxml"));
 			AnchorPane root = (AnchorPane)loader.load();
 			
-			Scene scene = new Scene(root,1200,800);
+//			Scene scene = new Scene(root,1200,800);
+			Scene scene = new Scene(root, 700, 450);
+			
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setTitle("Lunatic");
 			primaryStage.setScene(scene);
