@@ -1,5 +1,9 @@
 package stage;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,6 +11,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import util.AppUtill;
+import util.JDBCUtil;
 
 public class Stage1Controller {
 
@@ -41,6 +47,9 @@ public class Stage1Controller {
 	@FXML
 	private Label monterLabel5;
 	
+	//로그인포 아이디
+	String player_id = null;
+	
 	
 //	ArrayList<String> input = new ArrayList<>();
 //	Player player = new Player();
@@ -74,6 +83,54 @@ public class Stage1Controller {
 		}
 	}
 	
+	public void addCoin(int value) {
+		getLogInfo();
+		
+		JDBCUtil db = new JDBCUtil();
+		Connection con = db.getConnection();
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String coinSql = "UPDATE `save` SET `coin`=" + value + " WHERE player_id='" + player_id + "'";
+		
+		
+	
+		try { 
+			pstmt = con.prepareStatement(logInfoSql);
+			rs = pstmt.executeQuery();
+			
+			String player_id = rs.getString("id");
+			
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			AppUtill.alert("데이터 삽입에 실패했습니다.", null);
+		}
+	}
+	
+	
+	public void getLogInfo() {
+		JDBCUtil db = new JDBCUtil();
+		Connection con = db.getConnection();
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String logInfoSql = "select id from log_info";
+		
+		
+	
+		try { 
+			pstmt = con.prepareStatement(logInfoSql);
+			rs = pstmt.executeQuery();
+			
+			player_id = rs.getString("id");
+		} catch (Exception e) {
+			e.printStackTrace();
+			AppUtill.alert("데이터 삽입에 실패했습니다.", null);
+		}
+	}
+	
 	public void monterBtnHandler1() {
 		System.out.println("monter");
 		//포인트+ 표시하기
@@ -81,6 +138,10 @@ public class Stage1Controller {
 		//버튼 오파시티 0
 		monter1.setOpacity(0);
 		//포인트 올리기
+		int value = 10;
+		addCoin(value);
+		
+		
 	}
 	
 	public void monterBtnHandler2() {
@@ -89,7 +150,10 @@ public class Stage1Controller {
 		monterLabel2.setText("+10");
 		//버튼 오파시티 0
 		monter2.setOpacity(0);
+		
 		//포인트 올리기
+		
+		
 	}
 	public void monterBtnHandler3() {
 		System.out.println("monter");
