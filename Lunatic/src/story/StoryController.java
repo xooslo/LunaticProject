@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class StoryController {
@@ -24,6 +25,10 @@ public class StoryController {
 	// stage5버튼
 	@FXML
 	private Button stageBtn5;
+	
+//	주인공 이미지뷰
+	@FXML
+	private ImageView charactor;
 
 	// Root1로 이동하는 화면전환 코드
 	public void getroot1() {

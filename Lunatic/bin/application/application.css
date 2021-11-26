@@ -198,15 +198,14 @@
 	-fx-opacity: 1;
 	-fx-background-color: #5D4037;
 	-fx-text-fill: white;
-	
 }
 
 .storeBtn {
 	-fx-opacity: 1;
 	-fx-background-color: #5D4037;
 	-fx-text-fill: white;
-	
 }
+
 .monster_01 {
 /*몬스터 버튼 이미지 깔기 -----이미지 누끼따서 넣어야됌!!! */
 	-fx-background-image: url(/pic/monster_01.png); 

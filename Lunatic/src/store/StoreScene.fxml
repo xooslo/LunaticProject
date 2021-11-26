@@ -11,9 +11,9 @@
          <children>
             <Button fx:id="stageBtn3" layoutX="1056.0" layoutY="754.0" mnemonicParsing="false" onAction="#getstageScene3" styleClass="stageBtn" text="상점에서 나가기" />
             <Button fx:id="potion" layoutX="173.0" layoutY="710.0" mnemonicParsing="false" onAction="#getPotion" prefHeight="23.0" prefWidth="68.0" styleClass="storeBtn" text="포션" />
-            <Button layoutX="438.0" layoutY="710.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="86.0" styleClass="storeBtn" text="황금 갑옷" />
-            <Button layoutX="647.0" layoutY="710.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="86.0" styleClass="storeBtn" text="가죽 갑옷" />
-            <Button layoutX="940.0" layoutY="710.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="68.0" styleClass="storeBtn" text="돌검" />
+            <Button fx:id="goldCostume" layoutX="438.0" layoutY="710.0" mnemonicParsing="false" onAction="#getGoldCostume" prefHeight="29.0" prefWidth="86.0" styleClass="storeBtn" text="황금 갑옷" />
+            <Button fx:id="costume" layoutX="647.0" layoutY="710.0" mnemonicParsing="false" onAction="#getCostume" prefHeight="29.0" prefWidth="86.0" styleClass="storeBtn" text="가죽 갑옷" />
+            <Button fx:id="sword" layoutX="940.0" layoutY="710.0" mnemonicParsing="false" onAction="#getSword" prefHeight="23.0" prefWidth="68.0" styleClass="storeBtn" text="돌검" />
             <Label layoutX="197.0" layoutY="744.0" text="20" />
             <Label layoutX="471.0" layoutY="744.0" text="50" />
             <Label layoutX="680.0" layoutY="744.0" text="30" />

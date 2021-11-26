@@ -18,6 +18,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import util.AppUtill;
 import util.JDBCUtil;
 
 public class StoreController implements Initializable{
@@ -32,6 +33,19 @@ public class StoreController implements Initializable{
 	
 	@FXML
 	private Button potion;
+	@FXML
+	private Button sword;
+	@FXML
+	private Button goldCostume;
+	@FXML
+	private Button costume;
+	
+	@FXML
+	private Button hat;
+	@FXML
+	private Button shoes;
+	@FXML
+	private Button diamondSword;
 	
 	String loginfo_id = null;
 	String loginfo_nick = null;
@@ -63,32 +77,140 @@ public class StoreController implements Initializable{
 			e.printStackTrace();
 		}
 	}
+	
 	public void getPotion() {
 		JDBCUtil db = new JDBCUtil();
 		Connection con = db.getConnection();
-		
 		PreparedStatement pstmt = null;
-		
-//		String sql = "SELECT `nick` FROM `log_info`";
-		// 데이터베이스에 저장되어 있는 포션의 최대값보다 +1 해서 넣기 시도
-		//포션은 사지는데 다른 계정에도 똑같이 들어감 
-		//pstmt.executequery(); 를 pstmt.executeUpdate(); 로 바꿈
-		
+
 		getLogInfo();
-		String insertPotion = "INSERT INTO `items` (`item`, `player_id`) VALUES ('item','" + loginfo_id + "') ";
+		String insertPotion = "INSERT INTO `items` (`item`, `player_id`) VALUES ('포션','" + loginfo_id + "') ";
 		
 		try {
 			pstmt = con.prepareStatement(insertPotion);
 			pstmt.executeUpdate();
+			AppUtill.alert("포션 구매완료", null);
+			initialize(null, null);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+	
+	public void getGoldCostume() {
+		JDBCUtil db = new JDBCUtil();
+		Connection con = db.getConnection();
+		PreparedStatement pstmt = null;
 
-	@FXML
-	private Button useItemBtn;
+		getLogInfo();
+		String insertGoldCostume = "INSERT INTO `items` (`item`, `player_id`) VALUES ('황금 갑옷','" + loginfo_id + "') ";
+		
+		try {
+			pstmt = con.prepareStatement(insertGoldCostume);
+			pstmt.executeUpdate();
+			AppUtill.alert("황금 갑옷 구매완료", null);
+			initialize(null, null);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void getCostume() {
+		JDBCUtil db = new JDBCUtil();
+		Connection con = db.getConnection();
+		PreparedStatement pstmt = null;
 
+		getLogInfo();
+		String insertCostume = "INSERT INTO `items` (`item`, `player_id`) VALUES ('가죽 갑옷','" + loginfo_id + "') ";
+		
+		try {
+			pstmt = con.prepareStatement(insertCostume);
+			pstmt.executeUpdate();
+			AppUtill.alert("가죽 갑옷 구매완료", null);
+			initialize(null, null);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void getSword() {
+		JDBCUtil db = new JDBCUtil();
+		Connection con = db.getConnection();
+		PreparedStatement pstmt = null;
+		
+		getLogInfo();
+		String insertSword = "INSERT INTO `items` (`item`, `player_id`) VALUES ('돌 검','" + loginfo_id + "') ";
+		
+		try {
+			pstmt = con.prepareStatement(insertSword);
+			pstmt.executeUpdate();
+			AppUtill.alert("돌 검 구매완료", null);
+			initialize(null, null);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void getShoes() {
+		JDBCUtil db = new JDBCUtil();
+		Connection con = db.getConnection();
+		PreparedStatement pstmt = null;
+		
+		getLogInfo();
+		String insertShoes = "INSERT INTO `items` (`item`, `player_id`) VALUES ('다이아 신발','" + loginfo_id + "') ";
+		
+		try {
+			pstmt = con.prepareStatement(insertShoes);
+			pstmt.executeUpdate();
+			AppUtill.alert("다이아몬드 신발 구매완료", null);
+			initialize(null, null);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void getDiamondSword() {
+		JDBCUtil db = new JDBCUtil();
+		Connection con = db.getConnection();
+		PreparedStatement pstmt = null;
+		
+		getLogInfo();
+		String insertSword = "INSERT INTO `items` (`item`, `player_id`) VALUES ('다이아 검','" + loginfo_id + "') ";
+		
+		try {
+			pstmt = con.prepareStatement(insertSword);
+			pstmt.executeUpdate();
+			AppUtill.alert("다이아몬드 검 구매완료", null);
+			initialize(null, null);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void getGoldHat() {
+		JDBCUtil db = new JDBCUtil();
+		Connection con = db.getConnection();
+		PreparedStatement pstmt = null;
+		
+		getLogInfo();
+		String insertGoldHat = "INSERT INTO `items` (`item`, `player_id`) VALUES ('황금 모자','" + loginfo_id + "') ";
+		
+		try {
+			pstmt = con.prepareStatement(insertGoldHat);
+			pstmt.executeUpdate();
+			AppUtill.alert("항금 모자 구매완료", null);
+			initialize(null, null);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 //	public void useItems() {
 //		JDBCUtil db = new JDBCUtil();
 //		Connection con = db.getConnection();
@@ -112,7 +234,7 @@ public class StoreController implements Initializable{
 		ResultSet rs = null;
 		List<String> result = new ArrayList<String>();
 		
-		String getItemsSQL = "SELECT `item` FROM `items`";
+		String getItemsSQL = "SELECT * FROM `items`";
 		
 		try {
 			pstmt = con.prepareStatement(getItemsSQL);
@@ -140,7 +262,6 @@ public class StoreController implements Initializable{
       PreparedStatement pstmt = null;
 
       String logGetSql = "SELECT * FROM log_info";
-
       ResultSet rs = null;
 
       try {
