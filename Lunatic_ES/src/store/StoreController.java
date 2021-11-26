@@ -32,6 +32,9 @@ public class StoreController implements Initializable{
 	
 	@FXML
 	private Button potion;
+	
+	String loginfo_id = null;
+	String loginfo_nick = null;
 
 	// StageScene3 이동하는 화면전환코드
 	public void getstageScene3() {
@@ -68,11 +71,13 @@ public class StoreController implements Initializable{
 		
 //		String sql = "SELECT `nick` FROM `log_info`";
 		// 데이터베이스에 저장되어 있는 포션의 최대값보다 +1 해서 넣기 시도
-		String insertPotion = "INSERT INTO `items` (`potion`) VALUES ";
+		//포션은 사지는데 다른 계정에도 똑같이 들어감 
+		//pstmt.executequery(); 를 pstmt.executeUpdate(); 로 바꿈
+		String insertPotion = "INSERT INTO `items` (`item`, `player_id`) VALUES ('item','" + loginfo_id + "') ";
 		
 		try {
 			pstmt = con.prepareStatement(insertPotion);
-			pstmt.executeQuery();
+			pstmt.executeUpdate();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +110,7 @@ public class StoreController implements Initializable{
 		ResultSet rs = null;
 		List<String> result = new ArrayList<String>();
 		
-		String getItemsSQL = "SELECT `potions`, `sword`, `costume` FROM `items`";
+		String getItemsSQL = "SELECT `item` FROM `items`";
 		
 		try {
 			pstmt = con.prepareStatement(getItemsSQL);
@@ -113,9 +118,8 @@ public class StoreController implements Initializable{
 		
 			while(rs.next()) {
 				System.out.println("---------------333");
-				result.add(rs.getString("potions"));
-				result.add(rs.getString("sword"));
-				result.add(rs.getString("costume"));
+				result.add(rs.getString("item"));
+				;
 			}
 			
 			items = FXCollections.observableArrayList(result);
@@ -124,5 +128,35 @@ public class StoreController implements Initializable{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 	}
+//  로그인포 
+  public void getLogInfo() {
+      //DB
+      JDBCUtil db = new JDBCUtil();
+      Connection con = db.getConnection();
+
+      PreparedStatement pstmt = null;
+
+      String logGetSql = "SELECT * FROM log_info";
+
+      ResultSet rs = null;
+
+      try {
+
+          //log get
+          pstmt  = con.prepareStatement(logGetSql);
+          rs = pstmt.executeQuery();
+
+          while (rs.next()) {
+              log_id = rs.getString("id");
+              log_nick = rs.getString("nick");
+          }
+      } catch (Exception e) {
+          e.printStackTrace();
+          System.out.println("삽입 실패!");
+      }
+
+      System.out.println(log_id + ", " + log_nick);
+  }
 }
