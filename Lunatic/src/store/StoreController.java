@@ -150,25 +150,24 @@ public class StoreController implements Initializable{
           rs = pstmt.executeQuery();
 
           while (rs.next()) {
-<<<<<<< HEAD:Lunatic_ES/src/store/StoreController.java
+
               loginfo_id = rs.getString("id");
               loginfo_nick = rs.getString("nick");
-=======
+
               String log_id = rs.getString("id");
               String log_nick = rs.getString("nick");
               
               System.out.println(log_id + ", " + log_nick);
->>>>>>> 7fa4f6c25706fa18852f82c008c27f7f69787f99:Lunatic/src/store/StoreController.java
+
           }
           
       } catch (Exception e) {
           e.printStackTrace();
           System.out.println("삽입 실패!");
       }
-<<<<<<< HEAD:Lunatic_ES/src/store/StoreController.java
+
 
       System.out.println(loginfo_id + ", " + loginfo_nick);
-=======
->>>>>>> 7fa4f6c25706fa18852f82c008c27f7f69787f99:Lunatic/src/store/StoreController.java
+
   }
 }
