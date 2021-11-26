@@ -1,0 +1,189 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+#Main {
+	-fx-background-image: url(/pic/main.png);
+	-fx-background-size: cover;
+	-fx-background-position: center;
+	
+}
+
+#login {
+	-fx-background-image: url(/pic/login.png);
+	-fx-background-size: cover;
+	-fx-background-position: center;
+	
+}
+#login_text {
+	-fx-font-size: 20px;
+	
+}
+
+#join {
+	-fx-background-image: url(/pic/login.png);
+	-fx-background-size: cover;
+	
+}
+
+#joinBtn:hover {
+	-fx-cursor: hand;
+	
+}
+
+#mainBtn {
+	-fx-background-image: url(/pic/set.png);
+	-fx-background-size: cover;
+	-fx-background-position: center;
+	
+}
+
+#mainBtn:hover {
+	-fx-cursor: hand;
+	
+}
+
+.utilBtn {
+	-fx-background-color: #1076e7;
+	-fx-text-fill: white;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0 ,0, 0.5), 0, 1, 5, 5);
+	
+}
+.utilBtn:hover {
+	-fx-cursor: hand ;
+	
+}
+
+.playBtn {
+	-fx-opacity: 0;
+	
+}
+.playBtn:hover {
+	-fx-cursor: hand;
+	
+}
+
+
+#settingPane {
+	-fx-background-image: url(/pic/setting_bg.png);
+	-fx-background-size: cover;
+	-fx-background-position: center;
+	
+}
+
+#storyPane {
+	-fx-background-image: url(/pic/smile_talk.png);
+	-fx-background-size: cover;
+	-fx-background-position: center;
+	
+}
+.storytext1 {
+	-fx-font-size: 20px;
+	
+}
+
+.skip_btn {
+	-fx-background-color: #b35900;
+	-fx-text-fill: white;
+	
+}
+.skip_btn:hover {
+	-fx-cursor: hand ;
+	
+}
+#ending {
+	-fx-background-image: url(/pic/ending.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+	
+}
+#endingToMain {
+	-fx-background-color: white;
+	-fx-text-fill: black;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0 , 0, 0.5), 0, 1, 5, 5);
+	
+}
+.endingBtn:hover {
+	-fx-cursor: hand ;
+	
+}
+#howTo {
+	-fx-background-image: url(/pic/howToPlay.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+}
+#stageScene1 {
+	-fx-background-image: url(/pic/stage_1_2.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+	
+}
+#stageScene2 {
+	-fx-background-image: url(/pic/stage_1_2.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+}
+#stageScene3 {
+	-fx-background-image: url(/pic/stage_3_4.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+	
+}
+#stageScene4 {
+	-fx-background-image: url(/pic/stage_3_4.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+	
+}
+#stageScene5 {
+	-fx-background-image: url(/pic/stage_5.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+	
+}
+#root1 {
+	-fx-background-image: url(/pic/root_1.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+	
+}
+#root2 {
+	-fx-background-image: url(/pic/root_2_01.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+	
+}
+.stageBtn{
+	-fx-opacity: 1;
+	-fx-background-color: #b35900;
+	-fx-text-fill: white;
+	
+}
+#store {
+	-fx-background-image: url(/pic/store.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+}
+#store2 {
+	-fx-background-image: url(/pic/store2.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+}
+.storeBtn {
+	-fx-opacity: 1;
+	-fx-background-color: #5D4037;
+	-fx-text-fill: white;
+	
+}
+
+.storeBtn {
+	-fx-opacity: 1;
+	-fx-background-color: #5D4037;
+	-fx-text-fill: white;
+	
+}
+.monster_01 {
+/*몬스터 버튼 이미지 깔기 -----이미지 누끼따서 넣어야됌!!! */
+	-fx-background-image: url(/pic/monster_01.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+	-fx-background-color: rgba(0, 0, 0, 0);
+}
