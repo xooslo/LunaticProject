@@ -20,6 +20,8 @@ public class Controller {
 	//설정버튼
 	@FXML
 	private Button setBtn;
+	@FXML
+	private Button set_afterBtn;
 	
 	//로그인버튼
 	@FXML
@@ -44,6 +46,8 @@ public class Controller {
 	//HOW TO에 가는 버튼
 	@FXML
 	private Button howplayBtn;
+	@FXML
+	private Button how_afterBtn;
 	
 	//story1버튼
 	@FXML
@@ -52,7 +56,6 @@ public class Controller {
 	//불러오기 버튼
 	@FXML
 	private Button loadBtn;
-	
 	
 	//설정창으로 이동하는 화면전환코드
 	public void getSettingScene() {
@@ -67,6 +70,20 @@ public class Controller {
 	         e.printStackTrace();
 	      }
 	   }
+	
+	//로그인 했을때 설정창으로 이동하는 화면전환코드
+		public void getSet_afterLogin() {
+		      try {
+		         Parent login = FXMLLoader.load(getClass().getResource("/work/SettingScene_afterLogin.fxml"));
+		         Scene scene = new Scene(login);
+		         Stage primaryStage = (Stage) set_afterBtn.getScene().getWindow();
+		         primaryStage.setScene(scene);
+		         primaryStage.setTitle("설정");
+		         
+		      } catch (Exception e) {
+		         e.printStackTrace();
+		      }
+		   }
 	
 	
 	//로그인창으로 이동하는 화면전환코드
@@ -194,7 +211,19 @@ public class Controller {
 	      }
 	   }
 	
-	
+	//how to창 이동하는 화면전환코드
+		public void getHow_afterLogin() {
+		      try {
+		         Parent login = FXMLLoader.load(getClass().getResource("/work/HowPlayScene_afterLogin.fxml"));
+		         Scene scene = new Scene(login);
+		         Stage primaryStage = (Stage) how_afterBtn.getScene().getWindow();
+		         primaryStage.setScene(scene);
+		         primaryStage.setTitle("How To play");
+		         
+		      } catch (Exception e) {
+		         e.printStackTrace();
+		      }
+		   }
 	
 	//StoryScene 이동하는 화면전환코드
 	public void getstoryScene() {
@@ -208,6 +237,34 @@ public class Controller {
 	      } catch (Exception e) {
 	         e.printStackTrace();
 	      }
+	}
+	
+	public void getScene(String url, Button btn) {
+		try {
+			Parent main = FXMLLoader.load(getClass().getResource(url));
+			Scene scene = new Scene(main);
+			Stage primaryStage = (Stage) btn.getScene().getWindow();
+			primaryStage.setScene(scene);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	private Button getMain_before;
+	
+	public void getMain_beforeLogin() {
+		try {
+			 Parent login = FXMLLoader.load(getClass().getResource("/work/MainScene.fxml"));
+	         Scene scene = new Scene(login);
+	         Stage primaryStage = (Stage) getMain_before.getScene().getWindow();
+	         primaryStage.setScene(scene);
+	         primaryStage.setTitle("LUNATIC");
+	         
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+		}
 	}
 	
 	//불러오기 버튼 클릭했을 때

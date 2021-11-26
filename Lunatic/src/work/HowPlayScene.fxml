@@ -7,7 +7,7 @@
    <children>
       <AnchorPane id="howTo" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <Button fx:id="mainBtn" layoutX="517.0" layoutY="14.0" mnemonicParsing="false" onAction="#getMainScene" prefHeight="63.0" prefWidth="69.0" styleClass="utilBtn" text="." />
+            <Button fx:id="getMain_before" layoutX="517.0" layoutY="14.0" mnemonicParsing="false" onAction="#getMain_beforeLogin" prefHeight="63.0" prefWidth="69.0" styleClass="utilBtn" stylesheets="@../application/application.css" text="." />
          </children></AnchorPane>
    </children>
 </AnchorPane>

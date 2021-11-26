@@ -33,10 +33,37 @@
 	-fx-background-image: url(/pic/set.png);
 	-fx-background-size: cover;
 	-fx-background-position: center;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0 ,0, 0.5), 0, 1, 5, 5);
 	
 }
 
 #mainBtn:hover {
+	-fx-cursor: hand;
+	
+}
+
+#getMainBtn {
+	-fx-background-image: url(/pic/set.png);
+	-fx-background-size: cover;
+	-fx-background-position: center;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0 ,0, 0.5), 0, 1, 5, 5);
+	
+}
+
+#getMainBtn:hover {
+	-fx-cursor: hand;
+	
+}
+
+#getMain_before {
+	-fx-background-image: url(/pic/set.png);
+	-fx-background-size: cover;
+	-fx-background-position: center;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0 ,0, 0.5), 0, 1, 5, 5);
+	
+}
+
+#getMain_before:hover {
 	-fx-cursor: hand;
 	
 }
@@ -101,7 +128,7 @@
 	-fx-effect: dropshadow(gaussian, rgba(0, 0 , 0, 0.5), 0, 1, 5, 5);
 	
 }
-.endingBtn:hover {
+#endingToMain:hover {
 	-fx-cursor: hand ;
 	
 }
