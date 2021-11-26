@@ -12,7 +12,7 @@ public class JDBCUtil {
 			e.printStackTrace();
 		}
 		
-		String connectionString = "jdbc:mysql://localhost/lunatic";
+		String connectionString = "jdbc:mysql://localhost/lunatic?serverTimezone=UTC";
 		String userId = "root";
 		String password = "";
 		
