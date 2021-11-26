@@ -137,7 +137,7 @@ public class JoinController {
 		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "SELECT `id`, `password` FROM `player` WHERE id = '"+ name +"' AND password = '"+ password +"';";
+		String sql = "SELECT `id`, `password`, `nick` FROM `player` WHERE id = '"+ name +"' AND password = '"+ password +"';";
 		
 		try {
 			pstmt = con.prepareStatement(sql);
@@ -147,16 +147,18 @@ public class JoinController {
 					
 				String ckId = rs.getString("id");
 				String ckPs = rs.getString("password");
+				String ckNick = rs.getString("nick");
 				if(name.equals(ckId) || password.equals(ckPs)) {
 					cnt++;
 					
 					
 					//로그인 세션
-					String logSetSql = "insert into log_info(`id`) value('" + ckId + "')";
+					String logSetSql = "insert into log_info(`id`, `nick`) value('" + ckId + "', '"+ ckNick +"')";
 
 					try {
 						pstmt  = con.prepareStatement(logSetSql);
 						pstmt.executeUpdate();
+						System.out.println("세션");
 					} catch (Exception e) {
 						e.printStackTrace();
 						System.out.println("실패!");

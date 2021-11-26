@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import util.AppUtill;
 import util.JDBCUtil;
@@ -22,6 +23,10 @@ public class Stage1Controller {
 	// stage2버튼
 	@FXML
 	private Button stageBtn2;
+	
+//	주인공 이미지뷰
+	@FXML
+	private ImageView charactor;
 	
 //	몬스터 버튼
 	@FXML
@@ -47,13 +52,45 @@ public class Stage1Controller {
 	@FXML
 	private Label monterLabel5;
 	
-	//로그인포 아이디
-	String player_id = null;
+	//지금 로긴한 사람 로그인포 정보
+	String log_id = null;
+	String log_nick = null;
 	
 	
 //	ArrayList<String> input = new ArrayList<>();
 //	Player player = new Player();
 
+	
+	
+//	로그인포 
+	public void getLogInfo() {
+		//DB
+		JDBCUtil db = new JDBCUtil();
+		Connection con = db.getConnection();
+		
+		PreparedStatement pstmt = null;
+		
+		String logGetSql = "SELECT * FROM log_info";
+		
+		ResultSet rs = null;
+		
+		try {
+			
+			//log get
+			pstmt  = con.prepareStatement(logGetSql);
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				log_id = rs.getString("id");	
+				log_nick = rs.getString("nick");	
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("삽입 실패!");
+		}
+		
+		System.out.println(log_id + ", " + log_nick);
+	}
 	
 	// 메인창으로 이동하는 화면전환코드
 		public void getMainScene() {
@@ -71,6 +108,7 @@ public class Stage1Controller {
 		
 	// StageScene2 이동하는 화면전환코드
 	public void getstageScene2() {
+		System.out.println("dPpPP");
 		try {
 			Parent login = FXMLLoader.load(getClass().getResource("/stage/StageScene2.fxml"));
 			Scene scene = new Scene(login);
@@ -83,6 +121,67 @@ public class Stage1Controller {
 		}
 	}
 	
+	
+	
+	
+	public void monterBtnHandler1() {
+//		System.out.println("monter");
+		
+		int value = 10;
+		//포인트+ 표시하기
+		monterLabel1.setText("+" + value);
+		//버튼 오파시티 0
+		monter1.setOpacity(0);
+		//포인트 올리기
+		addCoin(value);
+	}
+	public void monterBtnHandler2() {
+//		System.out.println("monter");
+		
+		int value = 10;
+		//포인트+ 표시하기
+		monterLabel2.setText("+" + value);
+		//버튼 오파시티 0
+		monter2.setOpacity(0);
+		//포인트 올리기
+		addCoin(value);
+	}
+	public void monterBtnHandler3() {
+//		System.out.println("monter");
+		
+		int value = 15;
+		//포인트+ 표시하기
+		monterLabel3.setText("+" + value);
+		//버튼 오파시티 0
+		monter3.setOpacity(0);
+		//포인트 올리기
+		addCoin(value);
+	}
+	public void monterBtnHandler4() {
+		System.out.println("monter");
+		
+		int value = 20;
+		//포인트+ 표시하기
+		monterLabel4.setText("+" + value);
+		//버튼 오파시티 0
+		monter4.setOpacity(0);
+		//포인트 올리기
+		addCoin(value);
+	}
+	public void monterBtnHandler5() {
+//		System.out.println("monter");
+		
+		int value = 20;
+		//포인트+ 표시하기
+		monterLabel5.setText("+" + value);
+		//버튼 오파시티 0
+		monter5.setOpacity(0);
+		//포인트 올리기
+		addCoin(value);
+	}
+	
+	
+	// 코인 업데이트
 	public void addCoin(int value) {
 		getLogInfo();
 		
@@ -90,93 +189,34 @@ public class Stage1Controller {
 		Connection con = db.getConnection();
 		
 		PreparedStatement pstmt = null;
+		String getCoin = "select coin from save where player_id='" + log_id + "'";
+		
 		ResultSet rs = null;
-		String coinSql = "UPDATE `save` SET `coin`=" + value + " WHERE player_id='" + player_id + "'";
-		
-		
 	
 		try { 
-			pstmt = con.prepareStatement(logInfoSql);
+			pstmt  = con.prepareStatement(getCoin);
 			rs = pstmt.executeQuery();
 			
-			String player_id = rs.getString("id");
-			
-			
+			if (rs.next()) {
+//				System.out.println(rs.getInt("coin"));
+				
+				int nowCoinValue = rs.getInt("coin");
+				value = nowCoinValue + value;
+				
+				String sql = "UPDATE `save` SET `coin`=" + value + " WHERE player_id='" + log_id + "'";
+				
+				try {
+					pstmt  = con.prepareStatement(sql);
+					pstmt.executeUpdate();
+				} catch (Exception e) {
+					e.printStackTrace();
+					AppUtill.alert("데이터 삽입에 실패했습니다.", null);
+				}
+			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 			AppUtill.alert("데이터 삽입에 실패했습니다.", null);
 		}
-	}
-	
-	
-	public void getLogInfo() {
-		JDBCUtil db = new JDBCUtil();
-		Connection con = db.getConnection();
-		
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String logInfoSql = "select id from log_info";
-		
-		
-	
-		try { 
-			pstmt = con.prepareStatement(logInfoSql);
-			rs = pstmt.executeQuery();
-			
-			player_id = rs.getString("id");
-		} catch (Exception e) {
-			e.printStackTrace();
-			AppUtill.alert("데이터 삽입에 실패했습니다.", null);
-		}
-	}
-	
-	public void monterBtnHandler1() {
-		System.out.println("monter");
-		//포인트+ 표시하기
-		monterLabel1.setText("+10");
-		//버튼 오파시티 0
-		monter1.setOpacity(0);
-		//포인트 올리기
-		int value = 10;
-		addCoin(value);
-		
-		
-	}
-	
-	public void monterBtnHandler2() {
-		System.out.println("monter");
-		//포인트+ 표시하기
-		monterLabel2.setText("+10");
-		//버튼 오파시티 0
-		monter2.setOpacity(0);
-		
-		//포인트 올리기
-		
-		
-	}
-	public void monterBtnHandler3() {
-		System.out.println("monter");
-		//포인트+ 표시하기
-		monterLabel3.setText("+10");
-		//버튼 오파시티 0
-		monter3.setOpacity(0);
-		//포인트 올리기
-	}
-	public void monterBtnHandler4() {
-		System.out.println("monter");
-		//포인트+ 표시하기
-		monterLabel4.setText("+10");
-		//버튼 오파시티 0
-		monter4.setOpacity(0);
-		//포인트 올리기
-	}
-	public void monterBtnHandler5() {
-		System.out.println("monter");
-		//포인트+ 표시하기
-		monterLabel5.setText("+10");
-		//버튼 오파시티 0
-		monter5.setOpacity(0);
-		//포인트 올리기
 	}
 }
