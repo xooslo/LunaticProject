@@ -73,6 +73,8 @@ public class StoreController implements Initializable{
 		// 데이터베이스에 저장되어 있는 포션의 최대값보다 +1 해서 넣기 시도
 		//포션은 사지는데 다른 계정에도 똑같이 들어감 
 		//pstmt.executequery(); 를 pstmt.executeUpdate(); 로 바꿈
+		
+		getLogInfo();
 		String insertPotion = "INSERT INTO `items` (`item`, `player_id`) VALUES ('item','" + loginfo_id + "') ";
 		
 		try {
@@ -149,14 +151,14 @@ public class StoreController implements Initializable{
           rs = pstmt.executeQuery();
 
           while (rs.next()) {
-              log_id = rs.getString("id");
-              log_nick = rs.getString("nick");
+              loginfo_id = rs.getString("id");
+              loginfo_nick = rs.getString("nick");
           }
       } catch (Exception e) {
           e.printStackTrace();
           System.out.println("삽입 실패!");
       }
 
-      System.out.println(log_id + ", " + log_nick);
+      System.out.println(loginfo_id + ", " + loginfo_nick);
   }
 }

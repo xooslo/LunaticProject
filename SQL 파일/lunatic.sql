@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- 생성 시간: 21-11-25 08:01
--- 서버 버전: 10.3.16-MariaDB
--- PHP 버전: 7.3.7
+-- 생성 시간: 21-11-26 10:13
+-- 서버 버전: 10.4.20-MariaDB
+-- PHP 버전: 7.4.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -29,11 +28,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `items` (
-  `potions` varchar(5) NOT NULL,
-  `sword` varchar(5) NOT NULL,
-  `costume` varchar(5) NOT NULL,
+  `id` int(11) NOT NULL,
+  `item` varchar(30) NOT NULL,
   `player_id` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 테이블의 덤프 데이터 `items`
+--
+
+INSERT INTO `items` (`id`, `item`, `player_id`) VALUES
+(1, 'item', 'qwer'),
+(2, 'item', 'qwer');
 
 -- --------------------------------------------------------
 
@@ -45,6 +51,13 @@ CREATE TABLE `log_info` (
   `id` varchar(30) NOT NULL,
   `nick` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 테이블의 덤프 데이터 `log_info`
+--
+
+INSERT INTO `log_info` (`id`, `nick`) VALUES
+('qwer', 'qwer');
 
 -- --------------------------------------------------------
 
@@ -65,6 +78,7 @@ CREATE TABLE `player` (
 INSERT INTO `player` (`id`, `nick`, `password`) VALUES
 ('fullsun', '??????', '1234'),
 ('haesun', 'hae', '1234'),
+('qwer', 'qwer', '1234'),
 ('xooslo', '현재여친', '1234');
 
 -- --------------------------------------------------------
@@ -100,7 +114,7 @@ INSERT INTO `save` (`id`, `stage`, `potion`, `accessory`, `skin`, `weapon`, `pla
 -- 테이블의 인덱스 `items`
 --
 ALTER TABLE `items`
-  ADD PRIMARY KEY (`player_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- 테이블의 인덱스 `log_info`
@@ -124,6 +138,12 @@ ALTER TABLE `save`
 --
 -- 덤프된 테이블의 AUTO_INCREMENT
 --
+
+--
+-- 테이블의 AUTO_INCREMENT `items`
+--
+ALTER TABLE `items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- 테이블의 AUTO_INCREMENT `save`
