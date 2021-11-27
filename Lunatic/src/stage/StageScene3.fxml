@@ -1,14 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="stageScene3" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stage.StageController">
+<AnchorPane id="stageScene3" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stage.StageController">
    <children>
       <AnchorPane id="stageScene3" layoutX="1.0" prefHeight="800.0" prefWidth="1200.0">
          <children>
             <Button fx:id="mainBtn" layoutX="1121.0" layoutY="14.0" mnemonicParsing="false" onAction="#getMainScene" prefHeight="66.0" prefWidth="65.0" styleClass="endingBtn" text="." />
             <Button fx:id="stageBtn4" layoutX="1059.0" layoutY="757.0" mnemonicParsing="false" onAction="#getstageScene4" styleClass="stageBtn" text="다음스테이지로" />
          </children></AnchorPane>
+      <ImageView fx:id="charactor" fitHeight="199.0" fitWidth="138.0" layoutX="80.0" layoutY="451.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pic/character.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="monterLabel51" layoutX="1002.0" layoutY="506.0" textFill="#f2ff00">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label fx:id="monterLabel5" layoutX="992.0" layoutY="496.0" textFill="#f2ff00">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="monterLabel4" layoutX="842.0" layoutY="576.0" textFill="#f2ff00">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label fx:id="monterLabel3" layoutX="727.0" layoutY="482.0" textFill="#f2ff00">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label fx:id="monterLabel2" layoutX="591.0" layoutY="576.0" textFill="#f2ff00">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label fx:id="monterLabel1" layoutX="395.0" layoutY="547.0" textFill="#f2ff00">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Button fx:id="monter3" layoutX="780.0" layoutY="478.0" mnemonicParsing="false" onAction="#monterBtnHandler3" prefHeight="89.0" prefWidth="108.0" styleClass="monster_02" />
+      <Button fx:id="monter2" layoutX="633.0" layoutY="567.0" mnemonicParsing="false" onAction="#monterBtnHandler2" prefHeight="89.0" prefWidth="108.0" styleClass="monster_02" />
+      <Button fx:id="monter4" layoutX="915.0" layoutY="550.0" mnemonicParsing="false" onAction="#monterBtnHandler4" prefHeight="89.0" prefWidth="108.0" styleClass="monster_02" />
+      <Button fx:id="monter5" layoutX="1056.0" layoutY="495.0" mnemonicParsing="false" onAction="#monterBtnHandler5" prefHeight="89.0" prefWidth="108.0" styleClass="monster_02" />
+      <Button fx:id="monter1" layoutX="468.0" layoutY="539.0" mnemonicParsing="false" onAction="#monterBtnHandler1" prefHeight="89.0" prefWidth="108.0" styleClass="monster_02" />
    </children>
 </AnchorPane>

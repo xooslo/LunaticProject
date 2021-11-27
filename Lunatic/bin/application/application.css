@@ -207,9 +207,23 @@
 }
 
 .monster_01 {
-/*몬스터 버튼 이미지 깔기 -----이미지 누끼따서 넣어야됌!!! */
 	-fx-background-image: url(/pic/monster_01.png); 
 	-fx-background-size: cover;
 	-fx-background-position: center;
 	-fx-background-color: rgba(0, 0, 0, 0);
 }
+
+.monster_02 {
+	-fx-background-image: url(/pic/monster_02.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+	-fx-background-color: rgba(0, 0, 0, 0);
+}
+
+.monster_03 {
+	-fx-background-image: url(/pic/monster_03.png); 
+	-fx-background-size: cover;
+	-fx-background-position: center;
+	-fx-background-color: rgba(0, 0, 0, 0);
+}
+

@@ -127,7 +127,7 @@ public class Stage1Controller {
 	public void monterBtnHandler1() {
 //		System.out.println("monter");
 		
-		int value = 10;
+		int value = 5;
 		//포인트+ 표시하기
 		monterLabel1.setText("+" + value);
 		//버튼 오파시티 0
@@ -138,7 +138,7 @@ public class Stage1Controller {
 	public void monterBtnHandler2() {
 //		System.out.println("monter");
 		
-		int value = 10;
+		int value = 5;
 		//포인트+ 표시하기
 		monterLabel2.setText("+" + value);
 		//버튼 오파시티 0
@@ -149,7 +149,7 @@ public class Stage1Controller {
 	public void monterBtnHandler3() {
 //		System.out.println("monter");
 		
-		int value = 15;
+		int value = 7;
 		//포인트+ 표시하기
 		monterLabel3.setText("+" + value);
 		//버튼 오파시티 0
@@ -160,7 +160,7 @@ public class Stage1Controller {
 	public void monterBtnHandler4() {
 		System.out.println("monter");
 		
-		int value = 20;
+		int value = 7;
 		//포인트+ 표시하기
 		monterLabel4.setText("+" + value);
 		//버튼 오파시티 0
@@ -171,7 +171,7 @@ public class Stage1Controller {
 	public void monterBtnHandler5() {
 //		System.out.println("monter");
 		
-		int value = 20;
+		int value = 10;
 		//포인트+ 표시하기
 		monterLabel5.setText("+" + value);
 		//버튼 오파시티 0

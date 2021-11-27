@@ -74,6 +74,8 @@ public class StageController {
 	private Button monter4;
 	@FXML
 	private Button monter5;
+	@FXML
+	private Button boss;
 	
 //	몬스터 라벨
 	@FXML
@@ -86,6 +88,9 @@ public class StageController {
 	private Label monterLabel4;
 	@FXML
 	private Label monterLabel5;
+	@FXML
+	private Label bossLabel;
+	
 	
 	//지금 로긴한 사람 로그인포 정보
 	String log_id = null;
@@ -146,7 +151,7 @@ public class StageController {
 	public void monterBtnHandler3() {
 //		System.out.println("monter");
 		
-		int value = 15;
+		int value = 13;
 		//포인트+ 표시하기
 		monterLabel3.setText("+" + value);
 		//버튼 오파시티 0
@@ -157,7 +162,7 @@ public class StageController {
 	public void monterBtnHandler4() {
 		System.out.println("monter");
 		
-		int value = 20;
+		int value = 13;
 		//포인트+ 표시하기
 		monterLabel4.setText("+" + value);
 		//버튼 오파시티 0
@@ -168,11 +173,23 @@ public class StageController {
 	public void monterBtnHandler5() {
 //		System.out.println("monter");
 		
-		int value = 20;
+		int value = 17;
 		//포인트+ 표시하기
 		monterLabel5.setText("+" + value);
 		//버튼 오파시티 0
 		monter5.setOpacity(0);
+		//포인트 올리기
+		addCoin(value);
+	}
+	
+	public void bossBtnHandler() {
+//		System.out.println("monter");
+		
+		int value = 30;
+		//포인트+ 표시하기
+		bossLabel.setText("+" + value);
+		//버튼 오파시티 0
+		boss.setOpacity(0);
 		//포인트 올리기
 		addCoin(value);
 	}
