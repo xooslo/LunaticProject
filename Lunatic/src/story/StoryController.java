@@ -47,7 +47,7 @@ public class StoryController {
 	// Ending로 이동하는 화면전환 코드
 	public void getEnding() {
 		try {
-			Parent login = FXMLLoader.load(getClass().getResource("/story/Ending.fxml"));
+			Parent login = FXMLLoader.load(getClass().getResource("/work/Ending.fxml"));
 			Scene scene = new Scene(login);
 			Stage primaryStage = (Stage) endingBtn.getScene().getWindow();
 			primaryStage.setScene(scene);
